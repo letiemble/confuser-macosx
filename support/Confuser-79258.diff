@@ -1,0 +1,439 @@
+Index: cecil/Mono.Cecil.csproj
+===================================================================
+--- cecil/Mono.Cecil.csproj	(revision 79258)
++++ cecil/Mono.Cecil.csproj	(working copy)
+@@ -1,7 +1,7 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+ <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+-    <Configuration Condition=" '$(Configuration)' == '' ">net_4_0_Debug</Configuration>
++    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+     <ProductVersion>9.0.30729</ProductVersion>
+     <SchemaVersion>2.0</SchemaVersion>
+@@ -19,23 +19,21 @@
+     <SccProvider>SAK</SccProvider>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+-    <DebugSymbols>true</DebugSymbols>
++    <DebugSymbols>True</DebugSymbols>
+     <DebugType>full</DebugType>
+-    <Optimize>false</Optimize>
++    <Optimize>False</Optimize>
+     <OutputPath>bin\Debug\</OutputPath>
+     <DefineConstants>DEBUG;TRACE;NET_3_5</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+-    <Optimize>true</Optimize>
++    <Optimize>True</Optimize>
+     <OutputPath>bin\Release\</OutputPath>
+     <DefineConstants>TRACE;NET_3_5</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v2.0' ">
+     <Reference Include="System.Core" />
+Index: cecil/symbols/pdb/Mono.Cecil.Pdb.csproj
+===================================================================
+--- cecil/symbols/pdb/Mono.Cecil.Pdb.csproj	(revision 79258)
++++ cecil/symbols/pdb/Mono.Cecil.Pdb.csproj	(working copy)
+@@ -1,7 +1,7 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+ <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+-    <Configuration Condition=" '$(Configuration)' == '' ">net_4_0_Debug</Configuration>
++    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+     <ProductVersion>9.0.30729</ProductVersion>
+     <SchemaVersion>2.0</SchemaVersion>
+@@ -19,23 +19,21 @@
+     <SccProvider>SAK</SccProvider>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+-    <DebugSymbols>true</DebugSymbols>
++    <DebugSymbols>True</DebugSymbols>
+     <DebugType>full</DebugType>
+-    <Optimize>false</Optimize>
++    <Optimize>False</Optimize>
+     <OutputPath>..\..\bin\Debug\</OutputPath>
+     <DefineConstants>DEBUG;TRACE;NET_3_5</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+-    <Optimize>true</Optimize>
++    <Optimize>True</Optimize>
+     <OutputPath>..\..\bin\Release\</OutputPath>
+     <DefineConstants>TRACE;NET_3_5</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <ItemGroup>
+     <Reference Include="System" />
+Index: Confuser.Core.Injections/Confuser.Core.Injections.csproj
+===================================================================
+--- Confuser.Core.Injections/Confuser.Core.Injections.csproj	(revision 79258)
++++ Confuser.Core.Injections/Confuser.Core.Injections.csproj	(working copy)
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.Core.Injections</RootNamespace>
+     <AssemblyName>Confuser.Core.Injections</AssemblyName>
+-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+@@ -22,23 +21,23 @@
+     </TargetFrameworkSubset>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+-    <DebugSymbols>true</DebugSymbols>
++    <DebugSymbols>True</DebugSymbols>
+     <DebugType>full</DebugType>
+-    <Optimize>false</Optimize>
++    <Optimize>False</Optimize>
+     <OutputPath>bin\Debug\</OutputPath>
+     <DefineConstants>DEBUG;TRACE</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
++    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+-    <Optimize>true</Optimize>
++    <Optimize>True</Optimize>
+     <OutputPath>bin\Release\</OutputPath>
+     <DefineConstants>TRACE</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
++    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+   </PropertyGroup>
+   <ItemGroup>
+     <Compile Include="AntiTampers.cs" />
+Index: Confuser.sln
+===================================================================
+--- Confuser.sln	(revision 79258)
++++ Confuser.sln	(working copy)
+@@ -1,12 +1,10 @@
+ ﻿
+-Microsoft Visual Studio Solution File, Format Version 10.00
+-# Visual Studio 2008
++Microsoft Visual Studio Solution File, Format Version 11.00
++# Visual Studio 2010
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.Core", "Confuser.Core\Confuser.Core.csproj", "{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}"
+ EndProject
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Cecil", "cecil\Mono.Cecil.csproj", "{D68133BD-1E63-496E-9EDE-4FBDBF77B486}"
+ EndProject
+-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser", "Confuser\Confuser.csproj", "{063E983E-5BE7-4675-97E4-3D8D9CEB3660}"
+-EndProject
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.Core.Injections", "Confuser.Core.Injections\Confuser.Core.Injections.csproj", "{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}"
+ EndProject
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.Console", "Confuser.Console\Confuser.Console.csproj", "{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}"
+@@ -22,6 +20,41 @@
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.MSBuild", "Confuser.MSBuild\Confuser.MSBuild.csproj", "{61B8E07E-1553-4040-AC91-E42008E5D6D7}"
+ EndProject
+ Global
++	GlobalSection(SolutionConfigurationPlatforms) = preSolution
++		Debug|Any CPU = Debug|Any CPU
++		Release|Any CPU = Release|Any CPU
++	EndGlobalSection
++	GlobalSection(ProjectConfigurationPlatforms) = postSolution
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Release|Any CPU.Build.0 = Release|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Release|Any CPU.Build.0 = Release|Any CPU
++		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Release|Any CPU.Build.0 = Release|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Release|Any CPU.Build.0 = Release|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Release|Any CPU.Build.0 = Release|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Release|Any CPU.Build.0 = Release|Any CPU
++	EndGlobalSection
++	GlobalSection(NestedProjects) = preSolution
++	EndGlobalSection
++	GlobalSection(MonoDevelopProperties) = preSolution
++		StartupItem = Confuser.Console\Confuser.Console.csproj
++	EndGlobalSection
+ 	GlobalSection(TeamFoundationVersionControl) = preSolution
+ 		SccNumberOfProjects = 8
+ 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+@@ -49,40 +82,6 @@
+ 		SccProjectName7 = Confuser.MSBuild
+ 		SccLocalPath7 = Confuser.MSBuild
+ 	EndGlobalSection
+-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+-		Debug|Any CPU = Debug|Any CPU
+-		Release|Any CPU = Release|Any CPU
+-	EndGlobalSection
+-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{063E983E-5BE7-4675-97E4-3D8D9CEB3660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{063E983E-5BE7-4675-97E4-3D8D9CEB3660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{063E983E-5BE7-4675-97E4-3D8D9CEB3660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{063E983E-5BE7-4675-97E4-3D8D9CEB3660}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Release|Any CPU.Build.0 = Release|Any CPU
+-	EndGlobalSection
+ 	GlobalSection(SolutionProperties) = preSolution
+ 		HideSolutionNode = FALSE
+ 	EndGlobalSection
+Index: Confuser.MSBuild/Confuser.MSBuild.csproj
+===================================================================
+--- Confuser.MSBuild/Confuser.MSBuild.csproj	(revision 79258)
++++ Confuser.MSBuild/Confuser.MSBuild.csproj	(working copy)
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+@@ -10,17 +10,18 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.MSBuild</RootNamespace>
+     <AssemblyName>Confuser.MSBuild</AssemblyName>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+     <SccAuxPath>SAK</SccAuxPath>
+     <SccProvider>SAK</SccProvider>
++    <SignAssembly>true</SignAssembly>
++    <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+-    <DebugSymbols>true</DebugSymbols>
++    <DebugSymbols>True</DebugSymbols>
+     <DebugType>full</DebugType>
+-    <Optimize>false</Optimize>
++    <Optimize>False</Optimize>
+     <OutputPath>bin\Debug\</OutputPath>
+     <DefineConstants>DEBUG;TRACE</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+@@ -28,7 +29,7 @@
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+-    <Optimize>true</Optimize>
++    <Optimize>True</Optimize>
+     <OutputPath>bin\Release\</OutputPath>
+     <DefineConstants>TRACE</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+@@ -36,9 +37,6 @@
+   </PropertyGroup>
+   <ItemGroup>
+     <Reference Include="Microsoft.Build.Framework" />
+-    <Reference Include="Microsoft.Build.Utilities.v3.5">
+-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+-    </Reference>
+     <Reference Include="System" />
+     <Reference Include="System.Core">
+       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+@@ -51,6 +49,7 @@
+     </Reference>
+     <Reference Include="System.Data" />
+     <Reference Include="System.Xml" />
++    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+   </ItemGroup>
+   <ItemGroup>
+     <Compile Include="MSBuildTask.cs" />
+Index: Confuser.Console/Confuser.Console.csproj
+===================================================================
+--- Confuser.Console/Confuser.Console.csproj	(revision 79258)
++++ Confuser.Console/Confuser.Console.csproj	(working copy)
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.Console</RootNamespace>
+     <AssemblyName>Confuser.Console</AssemblyName>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+@@ -20,17 +19,18 @@
+     <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+-    <DebugSymbols>true</DebugSymbols>
++    <DebugSymbols>True</DebugSymbols>
+     <DebugType>full</DebugType>
+-    <Optimize>false</Optimize>
++    <Optimize>False</Optimize>
+     <OutputPath>bin\Debug\</OutputPath>
+     <DefineConstants>DEBUG;TRACE</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
++    <Commandlineparameters>Foundry.Apps.MonobjcCop.UI.crproj</Commandlineparameters>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+-    <Optimize>true</Optimize>
++    <Optimize>True</Optimize>
+     <OutputPath>bin\Release\</OutputPath>
+     <DefineConstants>TRACE</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+Index: Confuser.Core/Confusions/ResEncryptConfusion.cs
+===================================================================
+--- Confuser.Core/Confusions/ResEncryptConfusion.cs	(revision 79258)
++++ Confuser.Core/Confusions/ResEncryptConfusion.cs	(working copy)
+@@ -57,7 +57,7 @@
+                 txt.reso = i.MainModule.GetType("Encryptions").Methods.FirstOrDefault(mtd => mtd.Name == "Resources");
+                 txt.reso = CecilHelper.Inject(mod, txt.reso);
+                 modType.Methods.Add(txt.reso);
+-                txt.reso.Name = ObfuscationHelper.GetRandomName();
++                txt.reso.Name = ObfuscationHelper.GetRandomName(NameMode.Letters);
+                 txt.reso.IsAssembly = true;
+                 AddHelper(txt.reso, HelperAttribute.NoInjection);
+                 Database.AddEntry("ResEncrypt", "Resolver", txt.reso.FullName);
+@@ -72,7 +72,7 @@
+                 }
+ 
+                 FieldDefinition datAsm = new FieldDefinition(
+-                    ObfuscationHelper.GetRandomName(),
++                    ObfuscationHelper.GetRandomName(NameMode.Letters),
+                     FieldAttributes.Static | FieldAttributes.CompilerControlled,
+                     mod.Import(typeof(System.Reflection.Assembly)));
+                 modType.Fields.Add(datAsm);
+@@ -87,7 +87,7 @@
+                 Database.AddEntry("ResEncrypt", "Key0", txt.key0);
+                 Database.AddEntry("ResEncrypt", "Key1", txt.key1);
+ 
+-                txt.resId = ObfuscationHelper.GetRandomName();
++                txt.resId = ObfuscationHelper.GetRandomName(NameMode.Letters);
+                 Database.AddEntry("ResEncrypt", "ResID", txt.resId);
+ 
+                 Mutator mutator = new Mutator();
+@@ -214,7 +214,7 @@
+             }
+             byte[] GetAsm(uint timestamp, List<KeyValuePair<string, byte[]>> dats)
+             {
+-                AssemblyDefinition asm = AssemblyDefinition.CreateAssembly(new AssemblyNameDefinition(ObfuscationHelper.GetRandomName(), new Version()), ObfuscationHelper.GetRandomName(), ModuleKind.Dll);
++                AssemblyDefinition asm = AssemblyDefinition.CreateAssembly(new AssemblyNameDefinition(ObfuscationHelper.GetRandomName(NameMode.Letters), new Version()), ObfuscationHelper.GetRandomName(NameMode.Letters), ModuleKind.Dll);
+                 foreach (KeyValuePair<string, byte[]> i in dats)
+                     asm.MainModule.Resources.Add(new EmbeddedResource(i.Key, ManifestResourceAttributes.Public, i.Value));
+                 asm.MainModule.TimeStamp = timestamp;
+Index: Confuser.Core/Confuser.cs
+===================================================================
+--- Confuser.Core/Confuser.cs	(revision 79258)
++++ Confuser.Core/Confuser.cs	(working copy)
+@@ -919,6 +919,7 @@
+         {
+             if (mod.GetType("ConfusedByAttribute") != null)
+                 throw new Exception("'" + mod.Name + "' is already obfuscated by Confuser!");
++            /*
+             TypeDefinition att = new TypeDefinition("", "ConfusedByAttribute", TypeAttributes.Class | TypeAttributes.NotPublic, mod.Import(typeof(Attribute)));
+             MethodDefinition ctor = new MethodDefinition(".ctor", MethodAttributes.RTSpecialName | MethodAttributes.SpecialName | MethodAttributes.Public, mod.TypeSystem.Void);
+             ctor.Parameters.Add(new ParameterDefinition(mod.TypeSystem.String));
+@@ -932,6 +933,7 @@
+             CustomAttribute ca = new CustomAttribute(ctor);
+             ca.ConstructorArguments.Add(new CustomAttributeArgument(mod.TypeSystem.String, string.Format("Confuser v" + typeof(Confuser).Assembly.GetName().Version.ToString())));
+             mod.CustomAttributes.Add(ca);
++            */
+         }
+ 
+         List<MemberSetting> newAdded = new List<MemberSetting>();
+Index: Confuser.Core/Confuser.Core.csproj
+===================================================================
+--- Confuser.Core/Confuser.Core.csproj	(revision 79258)
++++ Confuser.Core/Confuser.Core.csproj	(working copy)
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.Core</RootNamespace>
+     <AssemblyName>Confuser.Core</AssemblyName>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <FileUpgradeFlags>
+     </FileUpgradeFlags>
+@@ -31,7 +30,6 @@
+     <IsWebBootstrapper>false</IsWebBootstrapper>
+     <UseApplicationTrust>false</UseApplicationTrust>
+     <BootstrapperEnabled>true</BootstrapperEnabled>
+-    <TargetFrameworkProfile />
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+     <SccAuxPath>SAK</SccAuxPath>
+@@ -40,9 +38,9 @@
+     <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+-    <DebugSymbols>true</DebugSymbols>
++    <DebugSymbols>True</DebugSymbols>
+     <DebugType>full</DebugType>
+-    <Optimize>false</Optimize>
++    <Optimize>False</Optimize>
+     <OutputPath>bin\Debug\</OutputPath>
+     <DefineConstants>DEBUG;TRACE</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+@@ -51,7 +49,7 @@
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+-    <Optimize>true</Optimize>
++    <Optimize>True</Optimize>
+     <OutputPath>bin\Release\</OutputPath>
+     <DefineConstants>TRACE</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>

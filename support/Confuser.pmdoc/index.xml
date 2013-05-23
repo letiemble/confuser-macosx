@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<pkmkdoc spec="1.12">
+  <properties>
+    <title>Confuser Obfuscator</title>
+    <build>Confuser.pkg</build>
+    <certificate>@CERTIFICATE@</certificate>
+    <organization>com.codeplex.confuser</organization>
+    <userSees ui="easy"/>
+    <min-target os="3"/>
+    <domain anywhere="true"/>
+  </properties>
+  <distribution>
+    <versions min-spec="1.000000"/>
+    <scripts/>
+  </distribution>
+  <description>Confuser is a protector/obfuscator for .NET, providing great security to .NET Applications.</description>
+  <contents>
+    <choice title="binaries" id="choice0" starts_selected="true" starts_enabled="true" starts_hidden="false">
+      <pkgref id="com.codeplex.confuser.binaries.pkg"/>
+    </choice>
+  </contents>
+  <resources bg-scale="none" bg-align="topleft">
+    <locale lang="en">
+      <resource relative="true" mod="true" type="license">GPL.rtf</resource>
+    </locale>
+  </resources>
+  <flags/>
+  <item type="file">01binaries.xml</item>
+  <mod>properties.title</mod>
+  <mod>description</mod>
+</pkmkdoc>
