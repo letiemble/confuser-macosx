@@ -7,7 +7,7 @@
     <post-install type="none"/>
     <requireAuthorization/>
     <installFrom relative="true">../binaries</installFrom>
-    <installTo mod="true">/Library/Frameworks/Mono.framework/Libraries/confuser</installTo>
+    <installTo mod="true">/Library/Frameworks/Mono.framework/Libraries/mono/confuser</installTo>
     <flags>
       <followSymbolicLinks/>
     </flags>

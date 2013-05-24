@@ -11,6 +11,15 @@ Index: cecil/Mono.Cecil.csproj
      <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
      <ProductVersion>9.0.30729</ProductVersion>
      <SchemaVersion>2.0</SchemaVersion>
+@@ -11,7 +11,7 @@
+     <RootNamespace>Mono.Cecil</RootNamespace>
+     <AssemblyName>Mono.Cecil</AssemblyName>
+     <FileAlignment>512</FileAlignment>
+-    <SignAssembly>true</SignAssembly>
++    <SignAssembly>True</SignAssembly>
+     <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
 @@ -19,23 +19,21 @@
      <SccProvider>SAK</SccProvider>
    </PropertyGroup>
@@ -51,6 +60,15 @@ Index: cecil/symbols/pdb/Mono.Cecil.Pdb.csproj
      <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
      <ProductVersion>9.0.30729</ProductVersion>
      <SchemaVersion>2.0</SchemaVersion>
+@@ -11,7 +11,7 @@
+     <RootNamespace>Mono.Cecil.Pdb</RootNamespace>
+     <AssemblyName>Mono.Cecil.Pdb</AssemblyName>
+     <FileAlignment>512</FileAlignment>
+-    <SignAssembly>true</SignAssembly>
++    <SignAssembly>True</SignAssembly>
+     <AssemblyOriginatorKeyFile>..\..\..\confuser.snk</AssemblyOriginatorKeyFile>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
 @@ -19,23 +19,21 @@
      <SccProvider>SAK</SccProvider>
    </PropertyGroup>
@@ -78,6 +96,19 @@ Index: cecil/symbols/pdb/Mono.Cecil.Pdb.csproj
    </PropertyGroup>
    <ItemGroup>
      <Reference Include="System" />
+Index: cecil/Mono.Cecil.Cil/Symbols.cs
+===================================================================
+--- cecil/Mono.Cecil.Cil/Symbols.cs	(revision 79258)
++++ cecil/Mono.Cecil.Cil/Symbols.cs	(working copy)
+@@ -177,7 +177,7 @@
+ 		ISymbolReader GetSymbolReader (ModuleDefinition module, Stream symbolStream);
+ 	}
+ 
+-	static class SymbolProvider {
++	public static class SymbolProvider {
+ 
+ 		static readonly string symbol_kind = Type.GetType ("Mono.Runtime") != null ? "Mdb" : "Pdb";
+ 
 Index: Confuser.Core.Injections/Confuser.Core.Injections.csproj
 ===================================================================
 --- Confuser.Core.Injections/Confuser.Core.Injections.csproj	(revision 79258)
@@ -89,7 +120,7 @@ Index: Confuser.Core.Injections/Confuser.Core.Injections.csproj
    <PropertyGroup>
      <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
      <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-@@ -10,7 +10,6 @@
+@@ -10,35 +10,34 @@
      <AppDesignerFolder>Properties</AppDesignerFolder>
      <RootNamespace>Confuser.Core.Injections</RootNamespace>
      <AssemblyName>Confuser.Core.Injections</AssemblyName>
@@ -97,7 +128,12 @@ Index: Confuser.Core.Injections/Confuser.Core.Injections.csproj
      <FileAlignment>512</FileAlignment>
      <SccProjectName>SAK</SccProjectName>
      <SccLocalPath>SAK</SccLocalPath>
-@@ -22,23 +21,23 @@
+     <SccAuxPath>SAK</SccAuxPath>
+     <SccProvider>SAK</SccProvider>
+-    <SignAssembly>true</SignAssembly>
++    <SignAssembly>True</SignAssembly>
+     <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
+     <TargetFrameworkSubset>
      </TargetFrameworkSubset>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -145,9 +181,12 @@ Index: Confuser.sln
  Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.Core.Injections", "Confuser.Core.Injections\Confuser.Core.Injections.csproj", "{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}"
  EndProject
  Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.Console", "Confuser.Console\Confuser.Console.csproj", "{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}"
-@@ -22,6 +20,41 @@
+@@ -21,7 +19,48 @@
+ EndProject
  Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.MSBuild", "Confuser.MSBuild\Confuser.MSBuild.csproj", "{61B8E07E-1553-4040-AC91-E42008E5D6D7}"
  EndProject
++Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Cecil.Mdb", "cecil\symbols\mdb\Mono.Cecil.Mdb.csproj", "{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}"
++EndProject
  Global
 +	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 +		Debug|Any CPU = Debug|Any CPU
@@ -166,6 +205,10 @@ Index: Confuser.sln
 +		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 +		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Release|Any CPU.ActiveCfg = Release|Any CPU
 +		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Release|Any CPU.Build.0 = Release|Any CPU
++		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Release|Any CPU.Build.0 = Release|Any CPU
 +		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 +		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Debug|Any CPU.Build.0 = Debug|Any CPU
 +		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -187,7 +230,7 @@ Index: Confuser.sln
  	GlobalSection(TeamFoundationVersionControl) = preSolution
  		SccNumberOfProjects = 8
  		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-@@ -49,40 +82,6 @@
+@@ -49,40 +88,6 @@
  		SccProjectName7 = Confuser.MSBuild
  		SccLocalPath7 = Confuser.MSBuild
  	EndGlobalSection
@@ -249,7 +292,7 @@ Index: Confuser.MSBuild/Confuser.MSBuild.csproj
      <SccLocalPath>SAK</SccLocalPath>
      <SccAuxPath>SAK</SccAuxPath>
      <SccProvider>SAK</SccProvider>
-+    <SignAssembly>true</SignAssembly>
++    <SignAssembly>True</SignAssembly>
 +    <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -288,6 +331,31 @@ Index: Confuser.MSBuild/Confuser.MSBuild.csproj
    </ItemGroup>
    <ItemGroup>
      <Compile Include="MSBuildTask.cs" />
+Index: Confuser.MSBuild/MSBuildTask.cs
+===================================================================
+--- Confuser.MSBuild/MSBuildTask.cs	(revision 79258)
++++ Confuser.MSBuild/MSBuildTask.cs	(working copy)
+@@ -11,7 +11,7 @@
+ 
+ namespace Confuser
+ {
+-    public class MSBuildTask : Task
++	public class ConfuseTask : Task
+     {
+         public override bool Execute()
+         {
+Index: Confuser.MSBuild/Properties/AssemblyInfo.cs
+===================================================================
+--- Confuser.MSBuild/Properties/AssemblyInfo.cs	(revision 79258)
++++ Confuser.MSBuild/Properties/AssemblyInfo.cs	(working copy)
+@@ -32,5 +32,5 @@
+ // You can specify all the values or you can default the Build and Revision Numbers 
+ // by using the '*' as shown below:
+ // [assembly: AssemblyVersion("1.0.*")]
+-[assembly: AssemblyVersion("1.0.0.0")]
+-[assembly: AssemblyFileVersion("1.0.0.0")]
++[assembly: AssemblyVersion("1.9.0.0")]
++[assembly: AssemblyFileVersion("1.9.0.0")]
 Index: Confuser.Console/Confuser.Console.csproj
 ===================================================================
 --- Confuser.Console/Confuser.Console.csproj	(revision 79258)
@@ -299,7 +367,7 @@ Index: Confuser.Console/Confuser.Console.csproj
    <PropertyGroup>
      <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
      <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-@@ -10,7 +10,6 @@
+@@ -10,27 +10,27 @@
      <AppDesignerFolder>Properties</AppDesignerFolder>
      <RootNamespace>Confuser.Console</RootNamespace>
      <AssemblyName>Confuser.Console</AssemblyName>
@@ -307,7 +375,10 @@ Index: Confuser.Console/Confuser.Console.csproj
      <FileAlignment>512</FileAlignment>
      <SccProjectName>SAK</SccProjectName>
      <SccLocalPath>SAK</SccLocalPath>
-@@ -20,17 +19,18 @@
+     <SccAuxPath>SAK</SccAuxPath>
+     <SccProvider>SAK</SccProvider>
+-    <SignAssembly>true</SignAssembly>
++    <SignAssembly>True</SignAssembly>
      <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -369,26 +440,6 @@ Index: Confuser.Core/Confusions/ResEncryptConfusion.cs
                  foreach (KeyValuePair<string, byte[]> i in dats)
                      asm.MainModule.Resources.Add(new EmbeddedResource(i.Key, ManifestResourceAttributes.Public, i.Value));
                  asm.MainModule.TimeStamp = timestamp;
-Index: Confuser.Core/Confuser.cs
-===================================================================
---- Confuser.Core/Confuser.cs	(revision 79258)
-+++ Confuser.Core/Confuser.cs	(working copy)
-@@ -919,6 +919,7 @@
-         {
-             if (mod.GetType("ConfusedByAttribute") != null)
-                 throw new Exception("'" + mod.Name + "' is already obfuscated by Confuser!");
-+            /*
-             TypeDefinition att = new TypeDefinition("", "ConfusedByAttribute", TypeAttributes.Class | TypeAttributes.NotPublic, mod.Import(typeof(Attribute)));
-             MethodDefinition ctor = new MethodDefinition(".ctor", MethodAttributes.RTSpecialName | MethodAttributes.SpecialName | MethodAttributes.Public, mod.TypeSystem.Void);
-             ctor.Parameters.Add(new ParameterDefinition(mod.TypeSystem.String));
-@@ -932,6 +933,7 @@
-             CustomAttribute ca = new CustomAttribute(ctor);
-             ca.ConstructorArguments.Add(new CustomAttributeArgument(mod.TypeSystem.String, string.Format("Confuser v" + typeof(Confuser).Assembly.GetName().Version.ToString())));
-             mod.CustomAttributes.Add(ca);
-+            */
-         }
- 
-         List<MemberSetting> newAdded = new List<MemberSetting>();
 Index: Confuser.Core/Confuser.Core.csproj
 ===================================================================
 --- Confuser.Core/Confuser.Core.csproj	(revision 79258)
@@ -408,7 +459,7 @@ Index: Confuser.Core/Confuser.Core.csproj
      <FileAlignment>512</FileAlignment>
      <FileUpgradeFlags>
      </FileUpgradeFlags>
-@@ -31,7 +30,6 @@
+@@ -31,18 +30,17 @@
      <IsWebBootstrapper>false</IsWebBootstrapper>
      <UseApplicationTrust>false</UseApplicationTrust>
      <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -416,7 +467,9 @@ Index: Confuser.Core/Confuser.Core.csproj
      <SccProjectName>SAK</SccProjectName>
      <SccLocalPath>SAK</SccLocalPath>
      <SccAuxPath>SAK</SccAuxPath>
-@@ -40,9 +38,9 @@
+     <SccProvider>SAK</SccProvider>
+-    <SignAssembly>true</SignAssembly>
++    <SignAssembly>True</SignAssembly>
      <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -437,3 +490,14 @@ Index: Confuser.Core/Confuser.Core.csproj
      <OutputPath>bin\Release\</OutputPath>
      <DefineConstants>TRACE</DefineConstants>
      <ErrorReport>prompt</ErrorReport>
+@@ -182,6 +180,10 @@
+       <Project>{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}</Project>
+       <Name>Confuser.Core.Injections</Name>
+     </ProjectReference>
++    <ProjectReference Include="..\cecil\symbols\mdb\Mono.Cecil.Mdb.csproj">
++      <Project>{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}</Project>
++      <Name>Mono.Cecil.Mdb</Name>
++    </ProjectReference>
+   </ItemGroup>
+   <ItemGroup>
+     <Compile Include="Analyzers\NameAnalyzer.Xaml.cs">

@@ -2,18 +2,18 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
 	<!-- Import the Confuser MSBuild tasks -->
-	<Import Project="$(MSBuildBinPath)\Confuser.MSBuild.tasks" />
+	<UsingTask TaskName="ConfuseTask" AssemblyName="Confuser.MSBuild, Version=1.9.0.0, Culture=neutral, PublicKeyToken=3844c78c2ef5424a"/>
 
 	<PropertyGroup>
-		<PostBuildEventDependsOn>
-			$(PostBuildEventDependsOn);
+		<CoreBuildDependsOn>
+			$(CoreBuildDependsOn);
 			Confuse;
-		</PostBuildEventDependsOn>
+		</CoreBuildDependsOn>
 	</PropertyGroup>
 
 	<!-- Performs the obfuscation -->	
 	<Target Name="Confuse">
-		<CompileXib CrProj="$(MSBuildProjectDirectory)\$(MSBuildProjectName).crproj" BasePath="$(OutputPath)" />
+		<ConfuseTask CrProj="$(MSBuildProjectDirectory)\$(MSBuildProjectName).crproj" />
 	</Target>
   
 </Project>
