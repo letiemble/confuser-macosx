@@ -5,6 +5,7 @@
 	<UsingTask TaskName="ConfuseTask" AssemblyName="Confuser.MSBuild, Version=1.9.0.0, Culture=neutral, PublicKeyToken=3844c78c2ef5424a"/>
 
 	<PropertyGroup>
+		<_ConfuserDescriptor>$(MSBuildProjectDirectory)\$(MSBuildProjectName).$(Configuration).crproj</_ConfuserDescriptor>
 		<CoreBuildDependsOn>
 			$(CoreBuildDependsOn);
 			Confuse;
@@ -13,7 +14,7 @@
 
 	<!-- Performs the obfuscation -->	
 	<Target Name="Confuse">
-		<ConfuseTask CrProj="$(MSBuildProjectDirectory)\$(MSBuildProjectName).crproj" />
+		<ConfuseTask CrProj="$(_ConfuserDescriptor)" Condition=" Exists('$(_ConfuserDescriptor)') "/>
 	</Target>
   
 </Project>
