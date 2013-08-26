@@ -1,0 +1,579 @@
+Index: cecil/Mono.Cecil.csproj
+===================================================================
+--- cecil/Mono.Cecil.csproj	(revision 79642)
++++ cecil/Mono.Cecil.csproj	(working copy)
+@@ -1,7 +1,7 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+ <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+-    <Configuration Condition=" '$(Configuration)' == '' ">net_4_0_Debug</Configuration>
++    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+     <ProductVersion>9.0.30729</ProductVersion>
+     <SchemaVersion>2.0</SchemaVersion>
+@@ -26,7 +26,6 @@
+     <DefineConstants>DEBUG;TRACE;NET_3_5</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+@@ -35,7 +34,6 @@
+     <DefineConstants>TRACE;NET_3_5</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v2.0' ">
+     <Reference Include="System.Core" />
+Index: cecil/symbols/mdb/Mono.Cecil.Mdb.csproj
+===================================================================
+--- cecil/symbols/mdb/Mono.Cecil.Mdb.csproj	(revision 79642)
++++ cecil/symbols/mdb/Mono.Cecil.Mdb.csproj	(working copy)
+@@ -1,7 +1,7 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+ <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+-    <Configuration Condition=" '$(Configuration)' == '' ">net_4_0_Debug</Configuration>
++    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+     <ProductVersion>9.0.30729</ProductVersion>
+     <SchemaVersion>2.0</SchemaVersion>
+@@ -17,63 +17,24 @@
+     <SccLocalPath>SAK</SccLocalPath>
+     <SccAuxPath>SAK</SccAuxPath>
+     <SccProvider>SAK</SccProvider>
++    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+   </PropertyGroup>
+-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'net_2_0_Debug|AnyCPU' ">
++  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+     <DebugSymbols>true</DebugSymbols>
+     <DebugType>full</DebugType>
+     <Optimize>false</Optimize>
+-    <OutputPath>..\..\bin\net_2_0_Debug\</OutputPath>
+-    <DefineConstants>DEBUG;TRACE;CECIL</DefineConstants>
+-    <ErrorReport>prompt</ErrorReport>
+-    <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+-  </PropertyGroup>
+-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'net_2_0_Release|AnyCPU' ">
+-    <DebugType>pdbonly</DebugType>
+-    <Optimize>true</Optimize>
+-    <OutputPath>..\..\bin\net_2_0_Release\</OutputPath>
+-    <DefineConstants>TRACE;CECIL</DefineConstants>
+-    <ErrorReport>prompt</ErrorReport>
+-    <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+-  </PropertyGroup>
+-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'net_3_5_Debug|AnyCPU' ">
+-    <DebugSymbols>true</DebugSymbols>
+-    <DebugType>full</DebugType>
+-    <Optimize>false</Optimize>
+-    <OutputPath>..\..\bin\net_3_5_Debug\</OutputPath>
+-    <DefineConstants>DEBUG;TRACE;CECIL;NET_3_5</DefineConstants>
+-    <ErrorReport>prompt</ErrorReport>
+-    <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+-  </PropertyGroup>
+-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'net_3_5_Release|AnyCPU' ">
+-    <DebugType>pdbonly</DebugType>
+-    <Optimize>true</Optimize>
+-    <OutputPath>..\..\bin\net_3_5_Release\</OutputPath>
+-    <DefineConstants>TRACE;CECIL;NET_3_5</DefineConstants>
+-    <ErrorReport>prompt</ErrorReport>
+-    <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+-  </PropertyGroup>
+-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'net_4_0_Debug|AnyCPU' ">
+-    <DebugSymbols>true</DebugSymbols>
+-    <DebugType>full</DebugType>
+-    <Optimize>false</Optimize>
+     <OutputPath>..\..\bin\net_4_0_Debug\</OutputPath>
+     <DefineConstants>DEBUG;TRACE;CECIL;NET_3_5;NET_4_0</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+   </PropertyGroup>
+-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'net_4_0_Release|AnyCPU' ">
++  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+     <Optimize>true</Optimize>
+     <OutputPath>..\..\bin\net_4_0_Release\</OutputPath>
+     <DefineConstants>TRACE;CECIL;NET_3_5;NET_4_0</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+   </PropertyGroup>
+   <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v2.0' ">
+     <Reference Include="System.Core" />
+Index: cecil/symbols/pdb/Mono.Cecil.Pdb.csproj
+===================================================================
+--- cecil/symbols/pdb/Mono.Cecil.Pdb.csproj	(revision 79642)
++++ cecil/symbols/pdb/Mono.Cecil.Pdb.csproj	(working copy)
+@@ -1,7 +1,7 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+ <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+-    <Configuration Condition=" '$(Configuration)' == '' ">net_4_0_Debug</Configuration>
++    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+     <ProductVersion>9.0.30729</ProductVersion>
+     <SchemaVersion>2.0</SchemaVersion>
+@@ -26,7 +26,6 @@
+     <DefineConstants>DEBUG;TRACE;NET_3_5</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+@@ -35,7 +34,6 @@
+     <DefineConstants>TRACE;NET_3_5</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <ItemGroup>
+     <Reference Include="System" />
+Index: Confuser.Core.Injections/Confuser.Core.Injections.csproj
+===================================================================
+--- Confuser.Core.Injections/Confuser.Core.Injections.csproj	(revision 79642)
++++ Confuser.Core.Injections/Confuser.Core.Injections.csproj	(working copy)
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.Core.Injections</RootNamespace>
+     <AssemblyName>Confuser.Core.Injections</AssemblyName>
+-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+Index: Confuser.sln
+===================================================================
+--- Confuser.sln	(revision 79642)
++++ Confuser.sln	(working copy)
+@@ -1,6 +1,6 @@
+ ﻿
+-Microsoft Visual Studio Solution File, Format Version 10.00
+-# Visual Studio 2008
++Microsoft Visual Studio Solution File, Format Version 11.00
++# Visual Studio 2010
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confuser.Core", "Confuser.Core\Confuser.Core.csproj", "{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}"
+ EndProject
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Cecil", "cecil\Mono.Cecil.csproj", "{D68133BD-1E63-496E-9EDE-4FBDBF77B486}"
+@@ -24,36 +24,6 @@
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Cecil.Mdb", "cecil\symbols\mdb\Mono.Cecil.Mdb.csproj", "{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}"
+ EndProject
+ Global
+-	GlobalSection(TeamFoundationVersionControl) = preSolution
+-		SccNumberOfProjects = 9
+-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/TFS09
+-		SccLocalPath0 = .
+-		SccProjectUniqueName1 = Confuser.Core\\Confuser.Core.csproj
+-		SccProjectName1 = Confuser.Core
+-		SccLocalPath1 = Confuser.Core
+-		SccProjectUniqueName2 = Confuser\\Confuser.csproj
+-		SccProjectName2 = Confuser
+-		SccLocalPath2 = Confuser
+-		SccProjectUniqueName3 = Confuser.Core.Injections\\Confuser.Core.Injections.csproj
+-		SccProjectName3 = Confuser.Core.Injections
+-		SccLocalPath3 = Confuser.Core.Injections
+-		SccProjectUniqueName4 = Confuser.Console\\Confuser.Console.csproj
+-		SccProjectName4 = Confuser.Console
+-		SccLocalPath4 = Confuser.Console
+-		SccProjectUniqueName5 = cecil\\Mono.Cecil.csproj
+-		SccProjectName5 = cecil
+-		SccLocalPath5 = cecil
+-		SccProjectUniqueName6 = cecil\\symbols\\pdb\\Mono.Cecil.Pdb.csproj
+-		SccProjectName6 = cecil/symbols/pdb
+-		SccLocalPath6 = cecil\\symbols\\pdb
+-		SccProjectUniqueName7 = Confuser.MSBuild\\Confuser.MSBuild.csproj
+-		SccProjectName7 = Confuser.MSBuild
+-		SccLocalPath7 = Confuser.MSBuild
+-		SccProjectUniqueName8 = cecil\\symbols\\mdb\\Mono.Cecil.Mdb.csproj
+-		SccProjectName8 = cecil/symbols/mdb
+-		SccLocalPath8 = cecil\\symbols\\mdb
+-	EndGlobalSection
+ 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+ 		Debug|Any CPU = Debug|Any CPU
+ 		net_2_0_Debug|Any CPU = net_2_0_Debug|Any CPU
+@@ -65,38 +35,6 @@
+ 		Release|Any CPU = Release|Any CPU
+ 	EndGlobalSection
+ 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_2_0_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_2_0_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_2_0_Release|Any CPU.Build.0 = Release|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_3_5_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_3_5_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_3_5_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_3_5_Release|Any CPU.Build.0 = Release|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_4_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_4_0_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_4_0_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_2_0_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_2_0_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_2_0_Release|Any CPU.Build.0 = Release|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_3_5_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_3_5_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_3_5_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_3_5_Release|Any CPU.Build.0 = Release|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_4_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_4_0_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_4_0_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Release|Any CPU.Build.0 = Release|Any CPU
+ 		{063E983E-5BE7-4675-97E4-3D8D9CEB3660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+ 		{063E983E-5BE7-4675-97E4-3D8D9CEB3660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+ 		{063E983E-5BE7-4675-97E4-3D8D9CEB3660}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+@@ -113,22 +51,38 @@
+ 		{063E983E-5BE7-4675-97E4-3D8D9CEB3660}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
+ 		{063E983E-5BE7-4675-97E4-3D8D9CEB3660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+ 		{063E983E-5BE7-4675-97E4-3D8D9CEB3660}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_2_0_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_2_0_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_2_0_Release|Any CPU.Build.0 = Release|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_3_5_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_3_5_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_3_5_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_3_5_Release|Any CPU.Build.0 = Release|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_4_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_4_0_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_4_0_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Release|Any CPU.Build.0 = Release|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_2_0_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_2_0_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_2_0_Release|Any CPU.Build.0 = Release|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_3_5_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_3_5_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_3_5_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_3_5_Release|Any CPU.Build.0 = Release|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_4_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_4_0_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_4_0_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Release|Any CPU.Build.0 = Release|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_2_0_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_2_0_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_2_0_Release|Any CPU.Build.0 = Release|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_3_5_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_3_5_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_3_5_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_3_5_Release|Any CPU.Build.0 = Release|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_4_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_4_0_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_4_0_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Release|Any CPU.Build.0 = Release|Any CPU
+ 		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+ 		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+ 		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+@@ -145,40 +99,8 @@
+ 		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
+ 		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+ 		{6AC1B3FC-96D3-44BA-9629-848E3A8CC179}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_2_0_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_2_0_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_2_0_Release|Any CPU.Build.0 = Release|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_3_5_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_3_5_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_3_5_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_3_5_Release|Any CPU.Build.0 = Release|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_4_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_4_0_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_4_0_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{63E6915C-7EA4-4D76-AB28-0D7191EEA626}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_2_0_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_2_0_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_2_0_Release|Any CPU.Build.0 = Release|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_3_5_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_3_5_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_3_5_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_3_5_Release|Any CPU.Build.0 = Release|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_4_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_4_0_Debug|Any CPU.Build.0 = Debug|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_4_0_Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+-		{61B8E07E-1553-4040-AC91-E42008E5D6D7}.Release|Any CPU.Build.0 = Release|Any CPU
+-		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Debug|Any CPU.ActiveCfg = net_4_0_Debug|Any CPU
+-		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Debug|Any CPU.Build.0 = net_4_0_Debug|Any CPU
++		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+ 		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.net_2_0_Debug|Any CPU.ActiveCfg = net_2_0_Debug|Any CPU
+ 		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.net_2_0_Debug|Any CPU.Build.0 = net_2_0_Debug|Any CPU
+ 		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.net_2_0_Release|Any CPU.ActiveCfg = net_2_0_Release|Any CPU
+@@ -191,9 +113,92 @@
+ 		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.net_4_0_Debug|Any CPU.Build.0 = net_4_0_Debug|Any CPU
+ 		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.net_4_0_Release|Any CPU.ActiveCfg = net_4_0_Release|Any CPU
+ 		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.net_4_0_Release|Any CPU.Build.0 = net_4_0_Release|Any CPU
+-		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Release|Any CPU.ActiveCfg = net_4_0_Release|Any CPU
+-		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Release|Any CPU.Build.0 = net_4_0_Release|Any CPU
++		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}.Release|Any CPU.Build.0 = Release|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_2_0_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_2_0_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_2_0_Release|Any CPU.Build.0 = Release|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_3_5_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_3_5_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_3_5_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_3_5_Release|Any CPU.Build.0 = Release|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_4_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_4_0_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_4_0_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{D68133BD-1E63-496E-9EDE-4FBDBF77B486}.Release|Any CPU.Build.0 = Release|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_2_0_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_2_0_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_2_0_Release|Any CPU.Build.0 = Release|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_3_5_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_3_5_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_3_5_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_3_5_Release|Any CPU.Build.0 = Release|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_4_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_4_0_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_4_0_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}.Release|Any CPU.Build.0 = Release|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_2_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_2_0_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_2_0_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_2_0_Release|Any CPU.Build.0 = Release|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_3_5_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_3_5_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_3_5_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_3_5_Release|Any CPU.Build.0 = Release|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_4_0_Debug|Any CPU.ActiveCfg = Debug|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_4_0_Debug|Any CPU.Build.0 = Debug|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_4_0_Release|Any CPU.ActiveCfg = Release|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.net_4_0_Release|Any CPU.Build.0 = Release|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
++		{FAD246BD-65C2-4379-8B1F-59C1BA71B8E9}.Release|Any CPU.Build.0 = Release|Any CPU
+ 	EndGlobalSection
++	GlobalSection(NestedProjects) = preSolution
++	EndGlobalSection
++	GlobalSection(MonoDevelopProperties) = preSolution
++		StartupItem = Confuser.Core\Confuser.Core.csproj
++	EndGlobalSection
++	GlobalSection(TeamFoundationVersionControl) = preSolution
++		SccNumberOfProjects = 9
++		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
++		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/TFS09
++		SccLocalPath0 = .
++		SccProjectUniqueName1 = Confuser.Core\\Confuser.Core.csproj
++		SccProjectName1 = Confuser.Core
++		SccLocalPath1 = Confuser.Core
++		SccProjectUniqueName2 = Confuser\\Confuser.csproj
++		SccProjectName2 = Confuser
++		SccLocalPath2 = Confuser
++		SccProjectUniqueName3 = Confuser.Core.Injections\\Confuser.Core.Injections.csproj
++		SccProjectName3 = Confuser.Core.Injections
++		SccLocalPath3 = Confuser.Core.Injections
++		SccProjectUniqueName4 = Confuser.Console\\Confuser.Console.csproj
++		SccProjectName4 = Confuser.Console
++		SccLocalPath4 = Confuser.Console
++		SccProjectUniqueName5 = cecil\\Mono.Cecil.csproj
++		SccProjectName5 = cecil
++		SccLocalPath5 = cecil
++		SccProjectUniqueName6 = cecil\\symbols\\pdb\\Mono.Cecil.Pdb.csproj
++		SccProjectName6 = cecil/symbols/pdb
++		SccLocalPath6 = cecil\\symbols\\pdb
++		SccProjectUniqueName7 = Confuser.MSBuild\\Confuser.MSBuild.csproj
++		SccProjectName7 = Confuser.MSBuild
++		SccLocalPath7 = Confuser.MSBuild
++		SccProjectUniqueName8 = cecil\\symbols\\mdb\\Mono.Cecil.Mdb.csproj
++		SccProjectName8 = cecil/symbols/mdb
++		SccLocalPath8 = cecil\\symbols\\mdb
++	EndGlobalSection
+ 	GlobalSection(SolutionProperties) = preSolution
+ 		HideSolutionNode = FALSE
+ 	EndGlobalSection
+Index: Confuser.MSBuild/Confuser.MSBuild.csproj
+===================================================================
+--- Confuser.MSBuild/Confuser.MSBuild.csproj	(revision 79642)
++++ Confuser.MSBuild/Confuser.MSBuild.csproj	(working copy)
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.MSBuild</RootNamespace>
+     <AssemblyName>Confuser.MSBuild</AssemblyName>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+@@ -36,9 +35,6 @@
+   </PropertyGroup>
+   <ItemGroup>
+     <Reference Include="Microsoft.Build.Framework" />
+-    <Reference Include="Microsoft.Build.Utilities.v3.5">
+-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+-    </Reference>
+     <Reference Include="System" />
+     <Reference Include="System.Core">
+       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+@@ -51,6 +47,7 @@
+     </Reference>
+     <Reference Include="System.Data" />
+     <Reference Include="System.Xml" />
++    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+   </ItemGroup>
+   <ItemGroup>
+     <Compile Include="MSBuildTask.cs" />
+Index: Confuser.MSBuild/MSBuildTask.cs
+===================================================================
+--- Confuser.MSBuild/MSBuildTask.cs	(revision 79642)
++++ Confuser.MSBuild/MSBuildTask.cs	(working copy)
+@@ -11,7 +11,7 @@
+ 
+ namespace Confuser
+ {
+-    public class MSBuildTask : Task
++	public class ConfuseTask : Task
+     {
+         public override bool Execute()
+         {
+Index: Confuser.MSBuild/Properties/AssemblyInfo.cs
+===================================================================
+--- Confuser.MSBuild/Properties/AssemblyInfo.cs	(revision 79642)
++++ Confuser.MSBuild/Properties/AssemblyInfo.cs	(working copy)
+@@ -32,5 +32,5 @@
+ // You can specify all the values or you can default the Build and Revision Numbers 
+ // by using the '*' as shown below:
+ // [assembly: AssemblyVersion("1.0.*")]
+-[assembly: AssemblyVersion("1.0.0.0")]
+-[assembly: AssemblyFileVersion("1.0.0.0")]
++[assembly: AssemblyVersion("1.9.0.0")]
++[assembly: AssemblyFileVersion("1.9.0.0")]
+Index: Confuser.Console/Confuser.Console.csproj
+===================================================================
+--- Confuser.Console/Confuser.Console.csproj	(revision 79642)
++++ Confuser.Console/Confuser.Console.csproj	(working copy)
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.Console</RootNamespace>
+     <AssemblyName>Confuser.Console</AssemblyName>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+Index: Confuser.Core/Confusions/ResEncryptConfusion.cs
+===================================================================
+--- Confuser.Core/Confusions/ResEncryptConfusion.cs	(revision 79642)
++++ Confuser.Core/Confusions/ResEncryptConfusion.cs	(working copy)
+@@ -57,7 +57,7 @@
+                 txt.reso = i.MainModule.GetType("Encryptions").Methods.FirstOrDefault(mtd => mtd.Name == "Resources");
+                 txt.reso = CecilHelper.Inject(mod, txt.reso);
+                 modType.Methods.Add(txt.reso);
+-                txt.reso.Name = ObfuscationHelper.GetRandomName();
++                txt.reso.Name = ObfuscationHelper.GetRandomName(NameMode.Letters);
+                 txt.reso.IsAssembly = true;
+                 AddHelper(txt.reso, HelperAttribute.NoInjection);
+                 Database.AddEntry("ResEncrypt", "Resolver", txt.reso.FullName);
+@@ -72,7 +72,7 @@
+                 }
+ 
+                 FieldDefinition datAsm = new FieldDefinition(
+-                    ObfuscationHelper.GetRandomName(),
++					ObfuscationHelper.GetRandomName(NameMode.Letters),
+                     FieldAttributes.Static | FieldAttributes.CompilerControlled,
+                     mod.Import(typeof(System.Reflection.Assembly)));
+                 modType.Fields.Add(datAsm);
+@@ -87,7 +87,7 @@
+                 Database.AddEntry("ResEncrypt", "Key0", txt.key0);
+                 Database.AddEntry("ResEncrypt", "Key1", txt.key1);
+ 
+-                txt.resId = ObfuscationHelper.GetRandomName();
++				txt.resId = ObfuscationHelper.GetRandomName(NameMode.Letters);
+                 Database.AddEntry("ResEncrypt", "ResID", txt.resId);
+ 
+                 Mutator mutator = new Mutator();
+@@ -214,7 +214,7 @@
+             }
+             byte[] GetAsm(uint timestamp, List<KeyValuePair<string, byte[]>> dats)
+             {
+-                AssemblyDefinition asm = AssemblyDefinition.CreateAssembly(new AssemblyNameDefinition(ObfuscationHelper.GetRandomName(), new Version()), ObfuscationHelper.GetRandomName(), ModuleKind.Dll);
++				AssemblyDefinition asm = AssemblyDefinition.CreateAssembly(new AssemblyNameDefinition(ObfuscationHelper.GetRandomName(NameMode.Letters), new Version()), ObfuscationHelper.GetRandomName(NameMode.Letters), ModuleKind.Dll);
+                 foreach (KeyValuePair<string, byte[]> i in dats)
+                     asm.MainModule.Resources.Add(new EmbeddedResource(i.Key, ManifestResourceAttributes.Public, i.Value));
+                 asm.MainModule.TimeStamp = timestamp;
+Index: Confuser.Core/Confuser.Core.csproj
+===================================================================
+--- Confuser.Core/Confuser.Core.csproj	(revision 79642)
++++ Confuser.Core/Confuser.Core.csproj	(working copy)
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.Core</RootNamespace>
+     <AssemblyName>Confuser.Core</AssemblyName>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <FileUpgradeFlags>
+     </FileUpgradeFlags>
