@@ -7,6 +7,13 @@ RELEASE?=79642
 CERTIFICATE?=Developer ID Installer: Laurent Etiemble
 
 ## --------------------
+## Alias
+## --------------------
+
+CPC=rsync -ar
+RMRF=rm -Rf
+
+## --------------------
 ## Variables
 ## --------------------
 
@@ -38,8 +45,8 @@ all: \
 	package
 
 clean:
-	rm -Rf $(CONFUSER_DIR)
-	rm -Rf $(BINARIES_DIR)
+	$(RMRF) $(CONFUSER_DIR)
+	$(RMRF) $(BINARIES_DIR)
 
 checkout: $(CONFUSER_DIR)
 
@@ -47,17 +54,17 @@ patch: checkout $(MONO_CECIL_MDB_DIR)
 	(cd $(CONFUSER_DIR); patch -N -p0 -i ../$(SUPPORT_DIR)/Confuser-$(RELEASE).diff; echo "Done");
 
 build: patch
-	cp $(SUPPORT_DIR)/$(CONFUSER_SNK) $(CONFUSER_DIR)
+	$(CPC) $(SUPPORT_DIR)/$(CONFUSER_SNK) $(CONFUSER_DIR)
 	xbuild /p:OutputPath=../../$(BINARIES_DIR) $(CONFUSER_DIR)/Confuser.Console/Confuser.Console.csproj
 	xbuild /p:OutputPath=../../$(BINARIES_DIR) $(CONFUSER_DIR)/Confuser.MSBuild/Confuser.MSBuild.csproj
-	cp $(SUPPORT_DIR)/$(CONFUSER_TARGETS) $(BINARIES_DIR)
-	cp $(SUPPORT_DIR)/$(CONFUSER_WRAPPER) $(BINARIES_DIR)
+	$(CPC) $(SUPPORT_DIR)/$(CONFUSER_TARGETS) $(BINARIES_DIR)
+	$(CPC) $(SUPPORT_DIR)/$(CONFUSER_WRAPPER) $(BINARIES_DIR)
 
 package: build
 	mkdir -p $(SUPPORT_DIR)/$(PACKAGE_PROJECT)
 	sed -e "s/@CERTIFICATE@/$(CERTIFICATE)/g" $(SUPPORT_DIR)/$(PACKAGE_TEMPLATE)/index.xml > $(SUPPORT_DIR)/$(PACKAGE_PROJECT)/index.xml
 	sed -e "s/@VERSION@/$(VERSION)/g" $(SUPPORT_DIR)/$(PACKAGE_TEMPLATE)/01binaries.xml > $(SUPPORT_DIR)/$(PACKAGE_PROJECT)/01binaries.xml
-	cp $(SUPPORT_DIR)/$(PACKAGE_TEMPLATE)/01binaries-contents.xml $(SUPPORT_DIR)/$(PACKAGE_PROJECT)/01binaries-contents.xml
+	$(CPC) $(SUPPORT_DIR)/$(PACKAGE_TEMPLATE)/01binaries-contents.xml $(SUPPORT_DIR)/$(PACKAGE_PROJECT)/01binaries-contents.xml
 	/Developer/Applications/Utilities/PackageMaker.app/Contents/MacOS/PackageMaker --verbose --doc $(SUPPORT_DIR)/$(PACKAGE_PROJECT) -o $(PACKAGE_FILE)
 
 local: build
@@ -68,7 +75,7 @@ $(CONFUSER_DIR):
 	svn co $(CONFUSER_SVN_URL) $(CONFUSER_DIR) -r $(RELEASE)
 
 $(MONO_CECIL_MDB_DIR):
-	cp $(SUPPORT_DIR)/$(MONO_CECIL_MDB_ZIP) $(MONO_CECIL_SYMBOLS_DIR)
+	$(CPC) $(SUPPORT_DIR)/$(MONO_CECIL_MDB_ZIP) $(MONO_CECIL_SYMBOLS_DIR)
 	(cd $(MONO_CECIL_SYMBOLS_DIR); unzip $(MONO_CECIL_MDB_ZIP); echo "Done");
 
 # ----------------------------------------
