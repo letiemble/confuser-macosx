@@ -1,27 +1,27 @@
-Index: cecil/Mono.Cecil.csproj
+Index: Confuser.Console/Confuser.Console.csproj
 ===================================================================
---- cecil/Mono.Cecil.csproj	(revision 79258)
-+++ cecil/Mono.Cecil.csproj	(working copy)
-@@ -1,7 +1,7 @@
+--- Confuser.Console/Confuser.Console.csproj	(revision 79258)
++++ Confuser.Console/Confuser.Console.csproj	(working copy)
+@@ -1,5 +1,5 @@
  ﻿<?xml version="1.0" encoding="utf-8"?>
- <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
    <PropertyGroup>
--    <Configuration Condition=" '$(Configuration)' == '' ">net_4_0_Debug</Configuration>
-+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
      <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-     <ProductVersion>9.0.30729</ProductVersion>
-     <SchemaVersion>2.0</SchemaVersion>
-@@ -11,7 +11,7 @@
-     <RootNamespace>Mono.Cecil</RootNamespace>
-     <AssemblyName>Mono.Cecil</AssemblyName>
+@@ -10,27 +10,27 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.Console</RootNamespace>
+     <AssemblyName>Confuser.Console</AssemblyName>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
      <FileAlignment>512</FileAlignment>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+     <SccAuxPath>SAK</SccAuxPath>
+     <SccProvider>SAK</SccProvider>
 -    <SignAssembly>true</SignAssembly>
 +    <SignAssembly>True</SignAssembly>
      <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
-     <SccProjectName>SAK</SccProjectName>
-     <SccLocalPath>SAK</SccLocalPath>
-@@ -19,23 +19,21 @@
-     <SccProvider>SAK</SccProvider>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 -    <DebugSymbols>true</DebugSymbols>
@@ -30,47 +30,49 @@ Index: cecil/Mono.Cecil.csproj
 -    <Optimize>false</Optimize>
 +    <Optimize>False</Optimize>
      <OutputPath>bin\Debug\</OutputPath>
-     <DefineConstants>DEBUG;TRACE;NET_3_5</DefineConstants>
+     <DefineConstants>DEBUG;TRACE</DefineConstants>
      <ErrorReport>prompt</ErrorReport>
      <WarningLevel>4</WarningLevel>
--    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
++    <Commandlineparameters>Foundry.Apps.MonobjcCop.UI.crproj</Commandlineparameters>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
      <DebugType>pdbonly</DebugType>
 -    <Optimize>true</Optimize>
 +    <Optimize>True</Optimize>
      <OutputPath>bin\Release\</OutputPath>
-     <DefineConstants>TRACE;NET_3_5</DefineConstants>
+     <DefineConstants>TRACE</DefineConstants>
      <ErrorReport>prompt</ErrorReport>
-     <WarningLevel>4</WarningLevel>
--    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-   </PropertyGroup>
-   <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v2.0' ">
-     <Reference Include="System.Core" />
-Index: cecil/symbols/pdb/Mono.Cecil.Pdb.csproj
+Index: Confuser.Core/Confuser.Core.csproj
 ===================================================================
---- cecil/symbols/pdb/Mono.Cecil.Pdb.csproj	(revision 79258)
-+++ cecil/symbols/pdb/Mono.Cecil.Pdb.csproj	(working copy)
-@@ -1,7 +1,7 @@
+--- Confuser.Core/Confuser.Core.csproj	(revision 79258)
++++ Confuser.Core/Confuser.Core.csproj	(working copy)
+@@ -1,5 +1,5 @@
  ﻿<?xml version="1.0" encoding="utf-8"?>
- <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
    <PropertyGroup>
--    <Configuration Condition=" '$(Configuration)' == '' ">net_4_0_Debug</Configuration>
-+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
      <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-     <ProductVersion>9.0.30729</ProductVersion>
-     <SchemaVersion>2.0</SchemaVersion>
-@@ -11,7 +11,7 @@
-     <RootNamespace>Mono.Cecil.Pdb</RootNamespace>
-     <AssemblyName>Mono.Cecil.Pdb</AssemblyName>
+@@ -10,7 +10,6 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.Core</RootNamespace>
+     <AssemblyName>Confuser.Core</AssemblyName>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
      <FileAlignment>512</FileAlignment>
--    <SignAssembly>true</SignAssembly>
-+    <SignAssembly>True</SignAssembly>
-     <AssemblyOriginatorKeyFile>..\..\..\confuser.snk</AssemblyOriginatorKeyFile>
+     <FileUpgradeFlags>
+     </FileUpgradeFlags>
+@@ -31,18 +30,17 @@
+     <IsWebBootstrapper>false</IsWebBootstrapper>
+     <UseApplicationTrust>false</UseApplicationTrust>
+     <BootstrapperEnabled>true</BootstrapperEnabled>
+-    <TargetFrameworkProfile />
      <SccProjectName>SAK</SccProjectName>
      <SccLocalPath>SAK</SccLocalPath>
-@@ -19,23 +19,21 @@
+     <SccAuxPath>SAK</SccAuxPath>
      <SccProvider>SAK</SccProvider>
+-    <SignAssembly>true</SignAssembly>
++    <SignAssembly>True</SignAssembly>
+     <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 -    <DebugSymbols>true</DebugSymbols>
@@ -78,37 +80,69 @@ Index: cecil/symbols/pdb/Mono.Cecil.Pdb.csproj
      <DebugType>full</DebugType>
 -    <Optimize>false</Optimize>
 +    <Optimize>False</Optimize>
-     <OutputPath>..\..\bin\Debug\</OutputPath>
-     <DefineConstants>DEBUG;TRACE;NET_3_5</DefineConstants>
+     <OutputPath>bin\Debug\</OutputPath>
+     <DefineConstants>DEBUG;TRACE</DefineConstants>
      <ErrorReport>prompt</ErrorReport>
-     <WarningLevel>4</WarningLevel>
--    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+@@ -51,7 +49,7 @@
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
      <DebugType>pdbonly</DebugType>
 -    <Optimize>true</Optimize>
 +    <Optimize>True</Optimize>
-     <OutputPath>..\..\bin\Release\</OutputPath>
-     <DefineConstants>TRACE;NET_3_5</DefineConstants>
+     <OutputPath>bin\Release\</OutputPath>
+     <DefineConstants>TRACE</DefineConstants>
      <ErrorReport>prompt</ErrorReport>
-     <WarningLevel>4</WarningLevel>
--    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-   </PropertyGroup>
+@@ -182,6 +180,10 @@
+       <Project>{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}</Project>
+       <Name>Confuser.Core.Injections</Name>
+     </ProjectReference>
++    <ProjectReference Include="..\cecil\symbols\mdb\Mono.Cecil.Mdb.csproj">
++      <Project>{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}</Project>
++      <Name>Mono.Cecil.Mdb</Name>
++    </ProjectReference>
+   </ItemGroup>
    <ItemGroup>
-     <Reference Include="System" />
-Index: cecil/Mono.Cecil.Cil/Symbols.cs
+     <Compile Include="Analyzers\NameAnalyzer.Xaml.cs">
+Index: Confuser.Core/Confusions/ResEncryptConfusion.cs
 ===================================================================
---- cecil/Mono.Cecil.Cil/Symbols.cs	(revision 79258)
-+++ cecil/Mono.Cecil.Cil/Symbols.cs	(working copy)
-@@ -177,7 +177,7 @@
- 		ISymbolReader GetSymbolReader (ModuleDefinition module, Stream symbolStream);
- 	}
+--- Confuser.Core/Confusions/ResEncryptConfusion.cs	(revision 79258)
++++ Confuser.Core/Confusions/ResEncryptConfusion.cs	(working copy)
+@@ -57,7 +57,7 @@
+                 txt.reso = i.MainModule.GetType("Encryptions").Methods.FirstOrDefault(mtd => mtd.Name == "Resources");
+                 txt.reso = CecilHelper.Inject(mod, txt.reso);
+                 modType.Methods.Add(txt.reso);
+-                txt.reso.Name = ObfuscationHelper.GetRandomName();
++                txt.reso.Name = ObfuscationHelper.GetRandomName(NameMode.Letters);
+                 txt.reso.IsAssembly = true;
+                 AddHelper(txt.reso, HelperAttribute.NoInjection);
+                 Database.AddEntry("ResEncrypt", "Resolver", txt.reso.FullName);
+@@ -72,7 +72,7 @@
+                 }
  
--	static class SymbolProvider {
-+	public static class SymbolProvider {
+                 FieldDefinition datAsm = new FieldDefinition(
+-                    ObfuscationHelper.GetRandomName(),
++                    ObfuscationHelper.GetRandomName(NameMode.Letters),
+                     FieldAttributes.Static | FieldAttributes.CompilerControlled,
+                     mod.Import(typeof(System.Reflection.Assembly)));
+                 modType.Fields.Add(datAsm);
+@@ -87,7 +87,7 @@
+                 Database.AddEntry("ResEncrypt", "Key0", txt.key0);
+                 Database.AddEntry("ResEncrypt", "Key1", txt.key1);
  
- 		static readonly string symbol_kind = Type.GetType ("Mono.Runtime") != null ? "Mdb" : "Pdb";
+-                txt.resId = ObfuscationHelper.GetRandomName();
++                txt.resId = ObfuscationHelper.GetRandomName(NameMode.Letters);
+                 Database.AddEntry("ResEncrypt", "ResID", txt.resId);
  
+                 Mutator mutator = new Mutator();
+@@ -214,7 +214,7 @@
+             }
+             byte[] GetAsm(uint timestamp, List<KeyValuePair<string, byte[]>> dats)
+             {
+-                AssemblyDefinition asm = AssemblyDefinition.CreateAssembly(new AssemblyNameDefinition(ObfuscationHelper.GetRandomName(), new Version()), ObfuscationHelper.GetRandomName(), ModuleKind.Dll);
++                AssemblyDefinition asm = AssemblyDefinition.CreateAssembly(new AssemblyNameDefinition(ObfuscationHelper.GetRandomName(NameMode.Letters), new Version()), ObfuscationHelper.GetRandomName(NameMode.Letters), ModuleKind.Dll);
+                 foreach (KeyValuePair<string, byte[]> i in dats)
+                     asm.MainModule.Resources.Add(new EmbeddedResource(i.Key, ManifestResourceAttributes.Public, i.Value));
+                 asm.MainModule.TimeStamp = timestamp;
 Index: Confuser.Core.Injections/Confuser.Core.Injections.csproj
 ===================================================================
 --- Confuser.Core.Injections/Confuser.Core.Injections.csproj	(revision 79258)
@@ -162,6 +196,278 @@ Index: Confuser.Core.Injections/Confuser.Core.Injections.csproj
    </PropertyGroup>
    <ItemGroup>
      <Compile Include="AntiTampers.cs" />
+Index: Confuser.MSBuild/Confuser.MSBuild.csproj
+===================================================================
+--- Confuser.MSBuild/Confuser.MSBuild.csproj	(revision 79258)
++++ Confuser.MSBuild/Confuser.MSBuild.csproj	(working copy)
+@@ -1,5 +1,5 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
++<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+@@ -10,17 +10,18 @@
+     <AppDesignerFolder>Properties</AppDesignerFolder>
+     <RootNamespace>Confuser.MSBuild</RootNamespace>
+     <AssemblyName>Confuser.MSBuild</AssemblyName>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+     <FileAlignment>512</FileAlignment>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+     <SccAuxPath>SAK</SccAuxPath>
+     <SccProvider>SAK</SccProvider>
++    <SignAssembly>True</SignAssembly>
++    <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+-    <DebugSymbols>true</DebugSymbols>
++    <DebugSymbols>True</DebugSymbols>
+     <DebugType>full</DebugType>
+-    <Optimize>false</Optimize>
++    <Optimize>False</Optimize>
+     <OutputPath>bin\Debug\</OutputPath>
+     <DefineConstants>DEBUG;TRACE</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+@@ -28,7 +29,7 @@
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <DebugType>pdbonly</DebugType>
+-    <Optimize>true</Optimize>
++    <Optimize>True</Optimize>
+     <OutputPath>bin\Release\</OutputPath>
+     <DefineConstants>TRACE</DefineConstants>
+     <ErrorReport>prompt</ErrorReport>
+@@ -36,9 +37,6 @@
+   </PropertyGroup>
+   <ItemGroup>
+     <Reference Include="Microsoft.Build.Framework" />
+-    <Reference Include="Microsoft.Build.Utilities.v3.5">
+-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+-    </Reference>
+     <Reference Include="System" />
+     <Reference Include="System.Core">
+       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+@@ -51,6 +49,7 @@
+     </Reference>
+     <Reference Include="System.Data" />
+     <Reference Include="System.Xml" />
++    <Reference Include="Microsoft.Build.Utilities.v4.0" />
+   </ItemGroup>
+   <ItemGroup>
+     <Compile Include="MSBuildTask.cs" />
+Index: Confuser.MSBuild/MSBuildTask.cs
+===================================================================
+--- Confuser.MSBuild/MSBuildTask.cs	(revision 79258)
++++ Confuser.MSBuild/MSBuildTask.cs	(working copy)
+@@ -1,82 +1,113 @@
+-﻿using System;
+-using System.Collections.Generic;
+-using System.Linq;
+-using System.Text;
+-using Microsoft.Build.Utilities;
+-using System.IO;
+-using System.Xml;
+-using Confuser.Core.Project;
+-using Microsoft.Build.Framework;
+-using Confuser.Core;
+-
+-namespace Confuser
+-{
+-    public class MSBuildTask : Task
+-    {
+-        public override bool Execute()
+-        {
+-            Log.LogMessage(MessageImportance.Low, "Confuser Version v{0}\n", typeof(Core.Confuser).Assembly.GetName().Version);
+-
+-
+-            string crproj = Path.Combine(
+-                Path.GetDirectoryName(BuildEngine.ProjectFileOfTaskNode),
+-                CrProj);
+-
+-            if (!File.Exists(crproj))
+-            {
+-                Log.LogError("Confuser", "CR001", "Project", "",
+-                    0, 0, 0, 0,
+-                    string.Format("Error: Crproj file '{0}' not exist!", crproj));
+-                return false;
+-            }
+-
+-            XmlDocument xmlDoc = new XmlDocument();
+-            ConfuserProject proj = new ConfuserProject();
+-            bool err = false;
+-            try
+-            {
+-                XmlReaderSettings settings = new XmlReaderSettings();
+-                settings.Schemas.Add(ConfuserProject.Schema);
+-                settings.ValidationType = ValidationType.Schema;
+-                settings.ValidationEventHandler += (sender, e) =>
+-                {
+-                    Log.LogError("Confuser", "CR002", "Project", crproj,
+-                        e.Exception.LineNumber, e.Exception.LinePosition,
+-                        e.Exception.LineNumber, e.Exception.LinePosition,
+-                        e.Message);
+-                    err = true;
+-                };
+-                var rdr = XmlReader.Create(crproj, settings);
+-                xmlDoc.Load(rdr);
+-                rdr.Close();
+-                if (err)
+-                    return false;
+-                proj.Load(xmlDoc);
+-            }
+-            catch (Exception ex)
+-            {
+-                Log.LogError("Confuser", "CR002", "Project", crproj,
+-                    0, 0, 0, 0,
+-                    ex.Message);
+-                return false;
+-            }
+-            proj.BasePath = BasePath;
+-
+-            Core.Confuser cr = new Core.Confuser();
+-            ConfuserParameter param = new ConfuserParameter();
+-            param.Project = proj;
+-
+-            var logger = new MSBuildLogger(Log);
+-            logger.Initalize(param.Logger);
+-
+-            Log.LogMessage(MessageImportance.Low, "Start working.");
+-            Log.LogMessage(MessageImportance.Low, "***************");
+-            cr.Confuse(param);
+-
+-            return logger.ReturnValue;
+-        }
+-
+-        public string CrProj { get; set; }
+-        public string BasePath { get; set; }
+-    }
+-}
++﻿using System;
++using System.Collections.Generic;
++using System.IO;
++using System.Linq;
++using System.Text;
++using System.Xml;
++using System.Xml.Linq;
++using Confuser.Core;
++using Confuser.Core.Project;
++using Microsoft.Build.Framework;
++using Microsoft.Build.Utilities;
++
++namespace Confuser
++{
++    public class ConfuseTask : Task
++    {
++        public override bool Execute()
++        {
++            Log.LogMessage(MessageImportance.Low, "Confuser Version v{0}\n", typeof(Core.Confuser).Assembly.GetName().Version);
++
++            if (!File.Exists(this.CrProj))
++            {
++                Log.LogError("Confuser", "CR001", "Project", "",
++                             0, 0, 0, 0,
++                             string.Format("Error: Crproj file '{0}' not exist!", this.CrProj));
++                return false;
++            }
++
++            XmlDocument xmlDoc = new XmlDocument();
++            ConfuserProject proj = new ConfuserProject();
++            proj.BasePath = this.BasePath;
++
++            bool err = false;
++            try
++            {
++                XmlReaderSettings settings = new XmlReaderSettings();
++                settings.Schemas.Add(ConfuserProject.Schema);
++                settings.ValidationType = ValidationType.Schema;
++                settings.ValidationEventHandler += (sender, e) =>
++                {
++                    Log.LogError("Confuser", "CR002", "Project", this.CrProj,
++                                 e.Exception.LineNumber, e.Exception.LinePosition,
++                                 e.Exception.LineNumber, e.Exception.LinePosition,
++                                 e.Message);
++                    err = true;
++                };
++
++                Log.LogMessage(MessageImportance.Low, "Loading configuration...");
++
++                var rdr = XmlReader.Create(this.CrProj, settings);
++                XDocument xdoc = XDocument.Load(rdr);
++                rdr.Close();
++                if (err)
++                    return false;
++
++                Substitute(xdoc.Root);
++
++                xmlDoc = new XmlDocument();
++                using(var xmlReader = xdoc.CreateReader())
++                {
++                    xmlDoc.Load(xmlReader);
++                }
++
++                proj.Load(xmlDoc);
++            }
++            catch (Exception ex)
++            {
++                Log.LogError("Confuser", "CR002", "Project", this.CrProj,
++                             0, 0, 0, 0,
++                             ex.Message);
++                return false;
++            }
++
++            Core.Confuser cr = new Core.Confuser();
++            ConfuserParameter param = new ConfuserParameter();
++            param.Project = proj;
++
++            var logger = new MSBuildLogger(Log);
++            logger.Initalize(param.Logger);
++
++            Log.LogMessage(MessageImportance.Low, "Start working.");
++            Log.LogMessage(MessageImportance.Low, "***************");
++            cr.Confuse(param);
++
++            return logger.ReturnValue;
++        }
++
++        public string CrProj { get; set; }
++        public string BasePath { get; set; }
++
++        private const String BASE_PATH = "${BasePath}";
++
++        private void Substitute(XElement element) {
++            Log.LogMessage(MessageImportance.Low, "Element {0}", element.Name);
++            foreach (XAttribute attribute in element.Attributes()) {
++                Substitute(attribute);
++            }
++            foreach (XElement descendant in element.Descendants()) {
++                Substitute(descendant);
++            }
++        }
++
++        private void Substitute(XAttribute attribute) {
++            String value = attribute.Value;
++            Log.LogMessage(MessageImportance.Low, "< Attribute {0}={1}", attribute.Name, attribute.Value);
++            if (value.IndexOf(BASE_PATH) == -1) {
++                return;
++            }
++            attribute.Value = value.Replace(BASE_PATH, this.BasePath);
++            Log.LogMessage(MessageImportance.Low, "> Attribute {0}={1}", attribute.Name, attribute.Value);
++        }
++    }
++}
+Index: Confuser.MSBuild/Properties/AssemblyInfo.cs
+===================================================================
+--- Confuser.MSBuild/Properties/AssemblyInfo.cs	(revision 79258)
++++ Confuser.MSBuild/Properties/AssemblyInfo.cs	(working copy)
+@@ -32,5 +32,5 @@
+ // You can specify all the values or you can default the Build and Revision Numbers 
+ // by using the '*' as shown below:
+ // [assembly: AssemblyVersion("1.0.*")]
+-[assembly: AssemblyVersion("1.0.0.0")]
+-[assembly: AssemblyFileVersion("1.0.0.0")]
++[assembly: AssemblyVersion("1.9.0.0")]
++[assembly: AssemblyFileVersion("1.9.0.0")]
 Index: Confuser.sln
 ===================================================================
 --- Confuser.sln	(revision 79258)
@@ -271,115 +577,43 @@ Index: Confuser.sln
  	GlobalSection(SolutionProperties) = preSolution
  		HideSolutionNode = FALSE
  	EndGlobalSection
-Index: Confuser.MSBuild/Confuser.MSBuild.csproj
+Index: cecil/Mono.Cecil.Cil/Symbols.cs
 ===================================================================
---- Confuser.MSBuild/Confuser.MSBuild.csproj	(revision 79258)
-+++ Confuser.MSBuild/Confuser.MSBuild.csproj	(working copy)
-@@ -1,5 +1,5 @@
- ﻿<?xml version="1.0" encoding="utf-8"?>
--<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-   <PropertyGroup>
-     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-@@ -10,17 +10,18 @@
-     <AppDesignerFolder>Properties</AppDesignerFolder>
-     <RootNamespace>Confuser.MSBuild</RootNamespace>
-     <AssemblyName>Confuser.MSBuild</AssemblyName>
--    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-     <FileAlignment>512</FileAlignment>
-     <SccProjectName>SAK</SccProjectName>
-     <SccLocalPath>SAK</SccLocalPath>
-     <SccAuxPath>SAK</SccAuxPath>
-     <SccProvider>SAK</SccProvider>
-+    <SignAssembly>True</SignAssembly>
-+    <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
-   </PropertyGroup>
-   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
--    <DebugSymbols>true</DebugSymbols>
-+    <DebugSymbols>True</DebugSymbols>
-     <DebugType>full</DebugType>
--    <Optimize>false</Optimize>
-+    <Optimize>False</Optimize>
-     <OutputPath>bin\Debug\</OutputPath>
-     <DefineConstants>DEBUG;TRACE</DefineConstants>
-     <ErrorReport>prompt</ErrorReport>
-@@ -28,7 +29,7 @@
-   </PropertyGroup>
-   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-     <DebugType>pdbonly</DebugType>
--    <Optimize>true</Optimize>
-+    <Optimize>True</Optimize>
-     <OutputPath>bin\Release\</OutputPath>
-     <DefineConstants>TRACE</DefineConstants>
-     <ErrorReport>prompt</ErrorReport>
-@@ -36,9 +37,6 @@
-   </PropertyGroup>
-   <ItemGroup>
-     <Reference Include="Microsoft.Build.Framework" />
--    <Reference Include="Microsoft.Build.Utilities.v3.5">
--      <RequiredTargetFramework>3.5</RequiredTargetFramework>
--    </Reference>
-     <Reference Include="System" />
-     <Reference Include="System.Core">
-       <RequiredTargetFramework>3.5</RequiredTargetFramework>
-@@ -51,6 +49,7 @@
-     </Reference>
-     <Reference Include="System.Data" />
-     <Reference Include="System.Xml" />
-+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
-   </ItemGroup>
-   <ItemGroup>
-     <Compile Include="MSBuildTask.cs" />
-Index: Confuser.MSBuild/MSBuildTask.cs
-===================================================================
---- Confuser.MSBuild/MSBuildTask.cs	(revision 79258)
-+++ Confuser.MSBuild/MSBuildTask.cs	(working copy)
-@@ -11,7 +11,7 @@
+--- cecil/Mono.Cecil.Cil/Symbols.cs	(revision 79258)
++++ cecil/Mono.Cecil.Cil/Symbols.cs	(working copy)
+@@ -177,7 +177,7 @@
+ 		ISymbolReader GetSymbolReader (ModuleDefinition module, Stream symbolStream);
+ 	}
  
- namespace Confuser
- {
--    public class MSBuildTask : Task
-+	public class ConfuseTask : Task
-     {
-         public override bool Execute()
-         {
-Index: Confuser.MSBuild/Properties/AssemblyInfo.cs
+-	static class SymbolProvider {
++	public static class SymbolProvider {
+ 
+ 		static readonly string symbol_kind = Type.GetType ("Mono.Runtime") != null ? "Mdb" : "Pdb";
+ 
+Index: cecil/Mono.Cecil.csproj
 ===================================================================
---- Confuser.MSBuild/Properties/AssemblyInfo.cs	(revision 79258)
-+++ Confuser.MSBuild/Properties/AssemblyInfo.cs	(working copy)
-@@ -32,5 +32,5 @@
- // You can specify all the values or you can default the Build and Revision Numbers 
- // by using the '*' as shown below:
- // [assembly: AssemblyVersion("1.0.*")]
--[assembly: AssemblyVersion("1.0.0.0")]
--[assembly: AssemblyFileVersion("1.0.0.0")]
-+[assembly: AssemblyVersion("1.9.0.0")]
-+[assembly: AssemblyFileVersion("1.9.0.0")]
-Index: Confuser.Console/Confuser.Console.csproj
-===================================================================
---- Confuser.Console/Confuser.Console.csproj	(revision 79258)
-+++ Confuser.Console/Confuser.Console.csproj	(working copy)
-@@ -1,5 +1,5 @@
+--- cecil/Mono.Cecil.csproj	(revision 79258)
++++ cecil/Mono.Cecil.csproj	(working copy)
+@@ -1,7 +1,7 @@
  ﻿<?xml version="1.0" encoding="utf-8"?>
--<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+ <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
    <PropertyGroup>
-     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+-    <Configuration Condition=" '$(Configuration)' == '' ">net_4_0_Debug</Configuration>
++    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
      <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-@@ -10,27 +10,27 @@
-     <AppDesignerFolder>Properties</AppDesignerFolder>
-     <RootNamespace>Confuser.Console</RootNamespace>
-     <AssemblyName>Confuser.Console</AssemblyName>
--    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+     <ProductVersion>9.0.30729</ProductVersion>
+     <SchemaVersion>2.0</SchemaVersion>
+@@ -11,7 +11,7 @@
+     <RootNamespace>Mono.Cecil</RootNamespace>
+     <AssemblyName>Mono.Cecil</AssemblyName>
      <FileAlignment>512</FileAlignment>
-     <SccProjectName>SAK</SccProjectName>
-     <SccLocalPath>SAK</SccLocalPath>
-     <SccAuxPath>SAK</SccAuxPath>
-     <SccProvider>SAK</SccProvider>
 -    <SignAssembly>true</SignAssembly>
 +    <SignAssembly>True</SignAssembly>
      <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+@@ -19,23 +19,21 @@
+     <SccProvider>SAK</SccProvider>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 -    <DebugSymbols>true</DebugSymbols>
@@ -388,89 +622,47 @@ Index: Confuser.Console/Confuser.Console.csproj
 -    <Optimize>false</Optimize>
 +    <Optimize>False</Optimize>
      <OutputPath>bin\Debug\</OutputPath>
-     <DefineConstants>DEBUG;TRACE</DefineConstants>
+     <DefineConstants>DEBUG;TRACE;NET_3_5</DefineConstants>
      <ErrorReport>prompt</ErrorReport>
      <WarningLevel>4</WarningLevel>
-+    <Commandlineparameters>Foundry.Apps.MonobjcCop.UI.crproj</Commandlineparameters>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
      <DebugType>pdbonly</DebugType>
 -    <Optimize>true</Optimize>
 +    <Optimize>True</Optimize>
      <OutputPath>bin\Release\</OutputPath>
-     <DefineConstants>TRACE</DefineConstants>
+     <DefineConstants>TRACE;NET_3_5</DefineConstants>
      <ErrorReport>prompt</ErrorReport>
-Index: Confuser.Core/Confusions/ResEncryptConfusion.cs
-===================================================================
---- Confuser.Core/Confusions/ResEncryptConfusion.cs	(revision 79258)
-+++ Confuser.Core/Confusions/ResEncryptConfusion.cs	(working copy)
-@@ -57,7 +57,7 @@
-                 txt.reso = i.MainModule.GetType("Encryptions").Methods.FirstOrDefault(mtd => mtd.Name == "Resources");
-                 txt.reso = CecilHelper.Inject(mod, txt.reso);
-                 modType.Methods.Add(txt.reso);
--                txt.reso.Name = ObfuscationHelper.GetRandomName();
-+                txt.reso.Name = ObfuscationHelper.GetRandomName(NameMode.Letters);
-                 txt.reso.IsAssembly = true;
-                 AddHelper(txt.reso, HelperAttribute.NoInjection);
-                 Database.AddEntry("ResEncrypt", "Resolver", txt.reso.FullName);
-@@ -72,7 +72,7 @@
-                 }
- 
-                 FieldDefinition datAsm = new FieldDefinition(
--                    ObfuscationHelper.GetRandomName(),
-+                    ObfuscationHelper.GetRandomName(NameMode.Letters),
-                     FieldAttributes.Static | FieldAttributes.CompilerControlled,
-                     mod.Import(typeof(System.Reflection.Assembly)));
-                 modType.Fields.Add(datAsm);
-@@ -87,7 +87,7 @@
-                 Database.AddEntry("ResEncrypt", "Key0", txt.key0);
-                 Database.AddEntry("ResEncrypt", "Key1", txt.key1);
- 
--                txt.resId = ObfuscationHelper.GetRandomName();
-+                txt.resId = ObfuscationHelper.GetRandomName(NameMode.Letters);
-                 Database.AddEntry("ResEncrypt", "ResID", txt.resId);
- 
-                 Mutator mutator = new Mutator();
-@@ -214,7 +214,7 @@
-             }
-             byte[] GetAsm(uint timestamp, List<KeyValuePair<string, byte[]>> dats)
-             {
--                AssemblyDefinition asm = AssemblyDefinition.CreateAssembly(new AssemblyNameDefinition(ObfuscationHelper.GetRandomName(), new Version()), ObfuscationHelper.GetRandomName(), ModuleKind.Dll);
-+                AssemblyDefinition asm = AssemblyDefinition.CreateAssembly(new AssemblyNameDefinition(ObfuscationHelper.GetRandomName(NameMode.Letters), new Version()), ObfuscationHelper.GetRandomName(NameMode.Letters), ModuleKind.Dll);
-                 foreach (KeyValuePair<string, byte[]> i in dats)
-                     asm.MainModule.Resources.Add(new EmbeddedResource(i.Key, ManifestResourceAttributes.Public, i.Value));
-                 asm.MainModule.TimeStamp = timestamp;
-Index: Confuser.Core/Confuser.Core.csproj
-===================================================================
---- Confuser.Core/Confuser.Core.csproj	(revision 79258)
-+++ Confuser.Core/Confuser.Core.csproj	(working copy)
-@@ -1,5 +1,5 @@
- ﻿<?xml version="1.0" encoding="utf-8"?>
--<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-   <PropertyGroup>
-     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-@@ -10,7 +10,6 @@
-     <AppDesignerFolder>Properties</AppDesignerFolder>
-     <RootNamespace>Confuser.Core</RootNamespace>
-     <AssemblyName>Confuser.Core</AssemblyName>
+     <WarningLevel>4</WarningLevel>
 -    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+   </PropertyGroup>
+   <ItemGroup Condition=" '$(TargetFrameworkVersion)' != 'v2.0' ">
+     <Reference Include="System.Core" />
+Index: cecil/symbols/pdb/Mono.Cecil.Pdb.csproj
+===================================================================
+--- cecil/symbols/pdb/Mono.Cecil.Pdb.csproj	(revision 79258)
++++ cecil/symbols/pdb/Mono.Cecil.Pdb.csproj	(working copy)
+@@ -1,7 +1,7 @@
+ ﻿<?xml version="1.0" encoding="utf-8"?>
+ <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+   <PropertyGroup>
+-    <Configuration Condition=" '$(Configuration)' == '' ">net_4_0_Debug</Configuration>
++    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+     <ProductVersion>9.0.30729</ProductVersion>
+     <SchemaVersion>2.0</SchemaVersion>
+@@ -11,7 +11,7 @@
+     <RootNamespace>Mono.Cecil.Pdb</RootNamespace>
+     <AssemblyName>Mono.Cecil.Pdb</AssemblyName>
      <FileAlignment>512</FileAlignment>
-     <FileUpgradeFlags>
-     </FileUpgradeFlags>
-@@ -31,18 +30,17 @@
-     <IsWebBootstrapper>false</IsWebBootstrapper>
-     <UseApplicationTrust>false</UseApplicationTrust>
-     <BootstrapperEnabled>true</BootstrapperEnabled>
--    <TargetFrameworkProfile />
-     <SccProjectName>SAK</SccProjectName>
-     <SccLocalPath>SAK</SccLocalPath>
-     <SccAuxPath>SAK</SccAuxPath>
-     <SccProvider>SAK</SccProvider>
 -    <SignAssembly>true</SignAssembly>
 +    <SignAssembly>True</SignAssembly>
-     <AssemblyOriginatorKeyFile>..\confuser.snk</AssemblyOriginatorKeyFile>
+     <AssemblyOriginatorKeyFile>..\..\..\confuser.snk</AssemblyOriginatorKeyFile>
+     <SccProjectName>SAK</SccProjectName>
+     <SccLocalPath>SAK</SccLocalPath>
+@@ -19,23 +19,21 @@
+     <SccProvider>SAK</SccProvider>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 -    <DebugSymbols>true</DebugSymbols>
@@ -478,26 +670,21 @@ Index: Confuser.Core/Confuser.Core.csproj
      <DebugType>full</DebugType>
 -    <Optimize>false</Optimize>
 +    <Optimize>False</Optimize>
-     <OutputPath>bin\Debug\</OutputPath>
-     <DefineConstants>DEBUG;TRACE</DefineConstants>
+     <OutputPath>..\..\bin\Debug\</OutputPath>
+     <DefineConstants>DEBUG;TRACE;NET_3_5</DefineConstants>
      <ErrorReport>prompt</ErrorReport>
-@@ -51,7 +49,7 @@
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
      <DebugType>pdbonly</DebugType>
 -    <Optimize>true</Optimize>
 +    <Optimize>True</Optimize>
-     <OutputPath>bin\Release\</OutputPath>
-     <DefineConstants>TRACE</DefineConstants>
+     <OutputPath>..\..\bin\Release\</OutputPath>
+     <DefineConstants>TRACE;NET_3_5</DefineConstants>
      <ErrorReport>prompt</ErrorReport>
-@@ -182,6 +180,10 @@
-       <Project>{DB542CC5-561B-4DBD-920B-25A34C8FB1BA}</Project>
-       <Name>Confuser.Core.Injections</Name>
-     </ProjectReference>
-+    <ProjectReference Include="..\cecil\symbols\mdb\Mono.Cecil.Mdb.csproj">
-+      <Project>{8559DD7F-A16F-46D0-A05A-9139FAEBA8FD}</Project>
-+      <Name>Mono.Cecil.Mdb</Name>
-+    </ProjectReference>
-   </ItemGroup>
+     <WarningLevel>4</WarningLevel>
+-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+   </PropertyGroup>
    <ItemGroup>
-     <Compile Include="Analyzers\NameAnalyzer.Xaml.cs">
+     <Reference Include="System" />

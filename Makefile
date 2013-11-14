@@ -3,7 +3,7 @@
 # ===============================================================
 
 VERSION?=1.9.0.0
-RELEASE?=79642
+RELEASE?=79258
 CERTIFICATE?=Developer ID Installer: Laurent Etiemble
 
 ## --------------------

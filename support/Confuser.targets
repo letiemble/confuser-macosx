@@ -14,7 +14,7 @@
 
 	<!-- Performs the obfuscation -->	
 	<Target Name="Confuse">
-		<ConfuseTask CrProj="$(_ConfuserDescriptor)" Condition=" Exists('$(_ConfuserDescriptor)') "/>
+		<ConfuseTask BasePath="$(MSBuildProjectDirectory)" CrProj="$(_ConfuserDescriptor)" Condition=" Exists('$(_ConfuserDescriptor)') "/>
 	</Target>
   
 </Project>
