@@ -30,7 +30,7 @@ See the Confuser wiki for more details.
 
 ### MSBuild use
 
-The MSBuild integration requires the edition of the the project file (a `.csproj` file for a C# project) to add the target:
+The MSBuild integration requires the edition of the project file (a `.csproj` file for a C# project) to add the target:
 
     <Import Project="$(MSBuildBinPath)\Confuser.targets" />
 
